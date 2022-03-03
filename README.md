@@ -1,29 +1,47 @@
-# lanli-ui-new
+# lanli-ui
 
-## Project setup
+## 安装
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm i -S lanli-ui
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### 全局安装
+```html
+// main.ts
+import { Popup, Icons } from '../lanli-ui'
+
+createApp(App)
+.use(Popup) 
+.use(Icons)
+.mount('#app')
+
+// home.vue
+<!--图标-->
+<lan-icon-select /> 
+
+<!--popup-->
+<lan-popup v-model:show="toggle" position="left" :style="{ width:'20%' }">
+  <button @click="toggle = !toggle">toggle</button>
+</lan-popup>
 ```
 
-### Run your end-to-end tests
-```
-npm run test:e2e
+## 按需引用
+```html
+  // home.vue
+  <lan-icon-select />
+  <lan-popup v-model:show="toggle" position="left" :style="{ width:'20%' }">
+    <button @click="toggle = !toggle">toggle</button>
+  </lan-popup>
+
+  <script lang="ts">
+    import { Popup, Layer, Toast } from "../packages";
+    components: { LanPopup: Popup },
+    setup(){
+      Layer.confirm({message:'确定删除?'})
+      Toast({message:'校验不通过!'})
+    }
+  </script>
+
+}
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

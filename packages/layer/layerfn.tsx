@@ -3,7 +3,6 @@ import { createApp,  Component, App, reactive, nextTick } from 'vue'
 import LanLayer from './layer'
 import {LayerOptions, LayerAction} from "./types"
 
-
 const inBrowser = typeof window !== 'undefined'
 let instance: ComponentInstance;
 
@@ -76,13 +75,6 @@ Layer.close = () => {
   }
 };
 
-// Layer.setDefaultOptions = (options: LayerOptions) => {
-//   Object.assign(Layer.currentOptions, options);
-// };
-
-// Layer.resetDefaultOptions = () => {
-//   Layer.currentOptions = Object.assign({}, Layer.defaultOptions);
-// };
 
 Layer.Component = withInstall(LanLayer);
 
