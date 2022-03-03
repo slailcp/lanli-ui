@@ -1,0 +1,64 @@
+
+:root {
+  --lan-popup-background-color: #fff;
+}
+
+
+.lan-popup-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--lan-popup-background-color);
+  z-index: 2;
+}
+
+.lan-popup-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--lan-popup-background-color);
+  z-index: 2;
+}
+
+.lan-popup-down {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50%;
+  background-color: var(--lan-popup-background-color);
+  z-index: 2;
+}
+
+.lan-popup-up {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50%;
+  background-color: var(--lan-popup-background-color);
+  z-index: 2;
+}
+
+.lan-popup-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--lan-popup-background-color);
+  z-index: 2;
+}
+
+.lan-popup-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}

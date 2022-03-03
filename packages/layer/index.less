@@ -1,0 +1,118 @@
+:root {
+  --lan-layer-background-color: #fff;
+  --lan-layer-button-active-color: orange;
+  --lan-loading-spinner-size: 20px;
+  --lan-color-primary: #409eff;
+}
+
+
+@keyframes loading-rotate {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px
+  }
+
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px
+  }
+}
+
+.lan-layer .circular {
+  display: inline;
+  height: var(--lan-loading-spinner-size);
+  width: var(--lan-loading-spinner-size);
+  animation: loading-rotate 2s linear infinite;
+}
+
+.lan-layer .circular .path {
+  animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  stroke-width: 2;
+  stroke: var(--lan-color-primary);
+  stroke-linecap: round;
+}
+
+.lan-layer-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  background-color: var(--lan-layer-background-color);
+  z-index: 2;
+}
+
+.lan-layer-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.lan-layer-title {
+  height: 23px;
+  padding: 10px 15px 5px 15px;
+  font-size: 14px;
+}
+
+.lan-layer-content {
+  max-height: 100px;
+  min-height: 50px;
+  padding: 10px 15px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.lan-layer-buttons {
+  padding: 0 15px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  line-height: 48px;
+
+  .lan-layer-btn {
+    flex: 1;
+
+    &:last-child {
+      color: var(--lan-layer-button-active-color)
+    }
+  }
+}
+
+.lan-layer {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.lan-dialogbound {
+  &-enter-from {
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all .3s;
+  }
+
+  &-leave-active {
+    transform: translate3d(-50%, -50%, 0) scale(0.9);
+    opacity: 0;
+  }
+}
