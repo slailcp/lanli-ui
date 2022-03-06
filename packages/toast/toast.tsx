@@ -2,7 +2,7 @@ import {
   defineComponent, onMounted, PropType, reactive, Transition
 } from 'vue';
 import { ToastAction } from "./types"
-import { IconSelect, IconCloseBold } from '../icons';
+import { Select, CloseBold } from '../icons';
 
 const ToastPropsOptions = {
   type: String, // 'loading' 'success' 'fail' 'html'
@@ -51,11 +51,11 @@ export default defineComponent({
     }
 
     const successRender = () => {
-      return <IconSelect class="successfail-svg" />
+      return <Select class="successfail-svg" />
     }
 
     const failRender = () => {
-      return <IconCloseBold class="successfail-svg" />
+      return <CloseBold class="successfail-svg" />
     }
 
     const renderTransition = () => {
