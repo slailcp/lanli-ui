@@ -94,7 +94,7 @@
   </div>
   <div style="height: 3000px; background: #fff"></div>
 
-  <popup v-model:show="toggle" :style="{ height: '20%', width: '20%' }">
+  <popup v-model:show="toggle" position="down" :style="{ height: '20%'}">
     <button @click="toggle = !toggle">toggle</button>
   </popup>
 </template>

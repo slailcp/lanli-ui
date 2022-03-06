@@ -62,7 +62,8 @@ export default defineComponent({
     const { position, transition, transitionAppear } = props;
 
     const name =
-      (position === 'center' || position === '') ? 'lan-fade' : `lan-slide-${position}`;
+      (position === 'center' || position === '') ? 'lan-fade' : `lan-slide-${position === 'down' ? 'up' : position === 'up' ? 'down' : position}`;
+
 
     const renderTransition = () => {
       return (
