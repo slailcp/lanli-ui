@@ -1,0 +1,47 @@
+:root {
+  --lan-calendar-choose-bgcolor: rgb(245, 223, 181);
+  --lan-calendar-choose-color: #333;
+
+  --lan-calendar-pass-bgcolor: #fafafa;
+  --lan-calendar-pass-color: #999;
+
+  --lan-calendar-active-bgcolor: #409eff;
+  --lan-calendar-active-color: #fff;
+
+  --lan-calendar-fontsize: 14px;
+}
+
+.lan-calendar-month {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.lan-calendar-con {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lan-calendar-con-date {
+  flex: 1;
+  min-width: 14.28%;
+  max-width: 14.28%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--lan-calendar-fontsize);
+  &.lan-calendar-pass,
+  &.lan-calendar-future {
+    background-color: var(--lan-calendar-pass-bgcolor);
+    color: var(--lan-calendar-pass-color);
+  }
+}
+
+.lan-calendar-date-active {
+  background-color: var(--lan-calendar-active-bgcolor);
+  color: var(--lan-calendar-active-color);
+}
+.lan-calendar-date-choose {
+  background-color: var(--lan-calendar-choose-bgcolor);
+  color: var(--lan-calendar-choose-color);
+}

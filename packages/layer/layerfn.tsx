@@ -1,5 +1,5 @@
 import { withInstall, ComponentInstance } from '../utils';
-import { createApp,  Component, App, reactive, nextTick } from 'vue'
+import { createApp,  Component, App } from 'vue'
 import LanLayer from './layer'
 import {LayerOptions, LayerAction} from "./types"
 
