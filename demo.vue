@@ -14,7 +14,7 @@
 import { reactive, toRefs } from '@vue/reactivity'
 
 import { onMounted } from '@vue/runtime-core';
-import InfiniteScroll from "@/components/infinite-scroll/index.jsx";
+import InfiniteScroll from "./infinite-scroll/index.jsx";
 
 export default {
   name: "demo",
