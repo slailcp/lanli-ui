@@ -1,0 +1,76 @@
+@import '../style/base.less';
+
+
+:root {
+   --fan-icon-badge-bgcolor:red;
+   --fan-icon-badge-top: 0;
+   --fan-icon-badge-right: 0;
+   --fan-icon-badge-bottom: auto;
+   --fan-icon-badge-left: auto;
+   --fan-icon-badge-fontsize: 12px;
+   --fan-icon-dot-width: 5px;
+}
+  
+
+.fan-icon-wraper{
+    display: inline-block;
+    position: relative;vertical-align: middle;
+    &::after{position: absolute;top:0;bottom:0;right:0;left:0;bottom: 0;z-index: 9;content: "";}
+    svg{display: block;}
+    img{width:20px;}
+    .fan-icon-dot{
+        position: absolute;
+        display: block;
+        background-color: var(--fan-icon-badge-bgcolor);
+        box-sizing:border-box;
+        right: var(--fan-icon-badge-right);
+        top: var(--fan-icon-badge-top);
+        left: var(--fan-icon-badge-left);
+        bottom: var(--fan-icon-badge-bottom);
+        border-radius: 50%;
+        width:var(--fan-icon-dot-width);
+        height:var(--fan-icon-dot-width);
+        transform: translateX(50%) translateY(-50%);;
+    }
+    .fan-icon-badge{
+        position: absolute;
+        display: block;
+        background-color: var(--fan-icon-badge-bgcolor);
+        box-sizing:border-box;
+        min-width: 20px;
+        text-align: center;
+        color: #fff;
+        right: var(--fan-icon-badge-right);
+        top: var(--fan-icon-badge-top);
+        left: var(--fan-icon-badge-left);
+        bottom: var(--fan-icon-badge-bottom);
+        border-radius: 999px;
+        font-style: normal;
+        line-height: 1.2;padding:1px 2px;
+        font-size: var(--fan-icon-badge-fontsize);transform: translateX(85%) translateY(-50%);;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

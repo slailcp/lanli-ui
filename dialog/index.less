@@ -1,0 +1,118 @@
+:root {
+  --fan-dialog-background-color: #fff;
+  --fan-dialog-button-active-color: orange;
+  --fan-loading-spinner-size: 20px;
+  --fan-color-primary: #409eff;
+}
+
+
+@keyframes loading-rotate {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px
+  }
+
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px
+  }
+}
+
+.fan-dialog .circular {
+  display: inline;
+  height: var(--fan-loading-spinner-size);
+  width: var(--fan-loading-spinner-size);
+  animation: loading-rotate 2s linear infinite;
+}
+
+.fan-dialog .circular .path {
+  animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  stroke-width: 2;
+  stroke: var(--fan-color-primary);
+  stroke-linecap: round;
+}
+
+.fan-dialog-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  transform: translate(-50%, -50%);
+  background-color: var(--fan-dialog-background-color);
+  z-index: 200;
+}
+
+.fan-mask-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 199;
+}
+
+.fan-dialog-title {
+  height: 23px;
+  padding: 10px 15px 5px 15px;
+  font-size: 14px;
+}
+
+.fan-dialog-content {
+  max-height: 100px;
+  min-height: 50px;
+  padding: 10px 15px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.fan-dialog-buttons {
+  padding: 0 15px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  line-height: 48px;
+
+  .fan-dialog-btn {
+    flex: 1;
+    cursor: pointer;
+    &:last-child {
+      color: var(--fan-dialog-button-active-color)
+    }
+  }
+}
+
+.fan-dialog {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fan-dialogbound {
+  &-enter-from {
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all .3s;
+  }
+
+  &-leave-active {
+    transform: translate3d(-50%, -50%, 0) scale(0.9);
+    opacity: 0;
+  }
+}

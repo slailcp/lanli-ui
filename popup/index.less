@@ -1,0 +1,70 @@
+
+@import '../style/base.less';
+
+:root {
+  --fan-popup-background-color: #fff;
+}
+
+
+.fan-popup-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--fan-popup-background-color);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.fan-popup-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--fan-popup-background-color);
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.fan-popup-bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50%;
+  background-color: var(--fan-popup-background-color);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.fan-popup-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50%;
+  background-color: var(--fan-popup-background-color);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.fan-popup-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--fan-popup-background-color);
+  z-index: 200;
+}
+
+.fan-mask-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 199;
+}
