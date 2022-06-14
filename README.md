@@ -1,13 +1,15 @@
-# lanli-ui
+# approval-flow
 
+[案例地址:  https://slailcp.github.io/approval-flow/index.html](https://slailcp.github.io/approval-flow/index.html)
 
 ## install
 ```js
-npm i --save lanli-ui
+npm i -S approval-flow
+import { OfficeFlow} from "approval-flow";
 ```
 
-##  use
- [document](https://slailcp.github.io/lanli-ui/index.html)
+## use
+```js
+<OfficeFlow :add-nodes="adddata" :node="cnode" @on-add="onAdd" @on-choose="onChoose" />
+```
 
-## 源码
- [源码](https://github.com/slailcp/lanli-ui)
