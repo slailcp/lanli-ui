@@ -1,6 +1,6 @@
 # lanli-ui
 
- 
+
 ## install
 ```js
 npm i --save lanli-ui
