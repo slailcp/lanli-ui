@@ -36,10 +36,9 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 60%;
   transform: translate(-50%, -50%);
   background-color: var(--lan-toast-background-color);
-  z-index: 2;
+  z-index: 200;
 
   &.top {
     top: 30%
@@ -52,18 +51,17 @@
 
 }
 
-.lan-toast-mask {
+.lan-mask-toast {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 1;
+  z-index: 199;
 }
 
 .lan-toast-content {
-  max-height: 100px;
   padding: 10px 15px;
   overflow-y: auto;
   font-size: 14px;
@@ -104,9 +102,9 @@
 .lan-toast-icon {
   text-align: center;padding-top:5px;
   color: var(--lan-loading-color-primary);
-  .successfail-svg {
+  .successfail-svg svg {
     height: 70px;
-    width: 70px;
+    width: 70px;color:#fff;
   }
 }
 

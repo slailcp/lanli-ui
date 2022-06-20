@@ -1,8 +1,8 @@
 import { withInstall } from '../utils';
-import _Popup from './popup';
+import popupCom from './popup';
 import "./index.less"
 
-export const Popup = withInstall(_Popup);
+export const Popup = withInstall(popupCom);
 export default Popup;
 
 declare module 'vue' {

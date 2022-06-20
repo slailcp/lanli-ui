@@ -2,7 +2,8 @@ import {
   defineComponent, onMounted, PropType, reactive, Transition
 } from 'vue';
 import { ToastAction } from "./types"
-import { Select, CloseBold } from '../icons';
+import Icon from '../icons';
+import { getZIndex } from '../utils';
 
 const ToastPropsOptions = {
   type: String, // 'loading' 'success' 'fail' 'html'
@@ -51,11 +52,11 @@ export default defineComponent({
     }
 
     const successRender = () => {
-      return <Select class="successfail-svg" />
+      return <Icon name="Select" class="successfail-svg"/>
     }
 
     const failRender = () => {
-      return <CloseBold class="successfail-svg" />
+      return <Icon name="CloseBold" class="successfail-svg" />
     }
 
     const renderTransition = () => {
@@ -72,7 +73,7 @@ export default defineComponent({
           appear={true}
         >
           <div
-            style={{ 'width': typeof props.width === 'string' ? props.width : `${props.width}px` }}
+            style={{ 'width': typeof props.width === 'string' ? props.width : `${props.width}px`,'z-index':getZIndex() + 2 }}
             class={`lan-toast-center ${props.className} ${props.position} lan-toast-${props.type}-wraper`} v-show={state.show}>
             {successRen}
             {failRen}
@@ -85,7 +86,7 @@ export default defineComponent({
     const renderToastMask = () => {
       return (
         <Transition name="lan-fade" appear={true}>
-          <div v-show={state.show} class={`lan-toast-mask ${props.shadeClassName}`}> </div>
+          <div v-show={state.show} class={`lan-mask-toast ${props.shadeClassName}`} style={{'z-index':getZIndex() + 1}}> </div>
         </Transition>
       )
     }

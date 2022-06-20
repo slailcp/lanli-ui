@@ -1,0 +1,26 @@
+@import '../style/base.less';
+
+
+:root {
+  --lan-cell-padding: 10px 0 10px 0;
+
+}
+
+.lan-rate-box{position: relative; 
+  .lan-rate{display: inline-block;cursor: pointer; vertical-align: middle;box-sizing: border-box;}
+  &.lan-rate-disabled{
+    .lan-rate{cursor: no-drop;   }
+    opacity: .8;
+  }
+  &.lan-rate-readonly{
+    .lan-rate{cursor: no-drop;}
+  }
+  &.lan-rate-move{
+    &::after{position: absolute;top:0;bottom:0;right:0;left:0;bottom: 0;z-index: 10;content: "";cursor: pointer;}
+    &.lan-rate-readonly,&.lan-rate-disabled{
+      &::after{cursor: no-drop;}
+    }
+  }
+
+  .lan-rate-span{display: inline-block;}
+}

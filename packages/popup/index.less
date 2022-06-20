@@ -1,4 +1,6 @@
 
+@import '../style/base.less';
+
 :root {
   --lan-popup-background-color: #fff;
 }
@@ -22,11 +24,11 @@
   bottom: 0;
   width: 50%;
   background-color: var(--lan-popup-background-color);
-  z-index: 2;
+  z-index: 200;
   overflow-y: auto;
 }
 
-.lan-popup-down {
+.lan-popup-bottom {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -37,7 +39,7 @@
   overflow-y: auto;
 }
 
-.lan-popup-up {
+.lan-popup-top {
   position: fixed;
   top: 0;
   right: 0;
@@ -54,15 +56,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--lan-popup-background-color);
-  z-index: 2;
+  z-index: 200;
 }
 
-.lan-popup-mask {
+.lan-mask-popup {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  z-index: 199;
 }

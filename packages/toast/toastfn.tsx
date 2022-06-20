@@ -45,7 +45,7 @@ Toast.defaultOptions = {
   width: "",
   message: "",
   duration: 2000,
-  shade: true,
+  shade: false,
   shadeClassName: "",
   className: "",
   allowHtml: false,

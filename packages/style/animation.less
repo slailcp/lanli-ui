@@ -1,5 +1,20 @@
 @import './var';
 
+
+
+@keyframes lan-slide-height-enter {
+  from {
+    height: 0;
+  }
+}
+@keyframes lan-slide-height-leave {
+  to {
+    height: 0;
+  }
+}
+
+
+
 @keyframes lan-slide-up-enter {
   from {
     transform: translate3d(0, 100%, 0);
@@ -89,6 +104,19 @@
       var(--lan-animation-timing-function-leave);
   }
 }
+
+.lan-slide-height {
+  &-enter-active {
+    animation: lan-slide-height-enter var(--lan-animation-duration-base) both
+      var(--lan-animation-timing-function-enter);
+  }
+
+  &-leave-active {
+    animation: lan-slide-height-leave var(--lan-animation-duration-base) both
+      var(--lan-animation-timing-function-leave);
+  }
+}
+
 
 .lan-slide-up {
   &-enter-active {
